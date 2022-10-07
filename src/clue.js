@@ -137,14 +137,17 @@ function selectRandom(Array) {
 }
 
 function pickMystery() {
-    return {
+    let selectedPack = {
         suspect: selectRandom(suspectsArray),
         room: selectRandom(roomsArray),
         weapon: selectRandom(weaponsArray)
     }
+    return selectedPack
 }
 
 // ITERATION 3
 
-function revealMystery() { }
+function revealMystery(selectedPack) {
+    return `${selectedPack.suspect.firstName} ${selectedPack.suspect.lastName} killed Mr. Boddy using the ${selectedPack.weapon.name} in the ${selectedPack.room.name}!`
+ }
 
